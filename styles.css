@@ -1,1 +1,64 @@
+/* 1. Background and Font */
+body {
+    background-color: #0a0a0a; /* Dark background */
+    color: #e0e0e0;            /* Readable web-safe font color */
+    font-family: Arial, Helvetica, sans-serif; /* Web-safe font requirement */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
 
+/* 2. Header Styling */
+header {
+    text-align: center;        /* Align text to center */
+    padding: 40px 20px;        /* Add padding */
+    background-color: #111;    /* Background color for header section */
+}
+
+header h1 {
+    font-size: 2.5rem;         /* Change font size */
+    font-weight: bold;         /* Change font weight */
+    margin: 0;
+}
+
+/* 3. Navigation Menu */
+nav ul {
+    display: flex;             /* Appear horizontally */
+    justify-content: center;
+    list-style: none;          /* Remove bullet points */
+    padding: 15px 0;
+    margin: 0;
+    background-color: #1a1a1a;
+}
+
+nav a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+/* Add hover effects for links */
+nav a:hover {
+    color: #ffffff;            /* Text color change on hover */
+    text-shadow: 0 0 8px #fff; /* Subtle techy glow */
+}
+
+/* 4. Main Sections */
+section {
+    padding: 40px;             /* Add padding */
+    margin: 20px auto;         /* Add margin */
+    max-width: 800px;
+    background-color: #111111; /* Distinguish content areas */
+    border: 1px solid #333;    /* Border to distinguish areas */
+    border-radius: 4px;
+}
+
+/* 5. Footer Styling */
+footer {
+    font-size: 0.85rem;        /* Smaller font */
+    text-align: center;        /* Align text to center */
+    padding: 20px;
+    background-color: #000;    /* Contrasting background */
+    color: #555;               /* Contrasting text color */
+}
