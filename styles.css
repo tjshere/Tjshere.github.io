@@ -62,3 +62,44 @@ footer {
     background-color: #000;    /* Contrasting background */
     color: #555;               /* Contrasting text color */
 }
+
+/* --- Table Styling (Step 2.2) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #333; /* Borders */
+}
+
+th, td {
+    padding: 15px; /* Padding */
+    text-align: left;
+    border-bottom: 1px solid #222;
+}
+
+thead th {
+    background-color: #1a1a1a; /* Header background color */
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* --- CSS Transitions & Interactivity (Step 2.1 & 2.3) --- */
+
+/* Navigation link background hover */
+nav a:hover {
+    background-color: #222; /* Navigation background change */
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 0 5px; /* Adjusting margin to prevent jumping */
+}
+
+/* Main Section Interaction: Zoom in on hover */
+section {
+    transition: transform 0.4s ease-in-out; /* Smooth transition effect */
+}
+
+section:hover {
+    transform: scale(1.02); /* Step 2.1: Section hover scale effect */
+    border-color: #555;     /* Bonus: subtle border highlight */
+}
