@@ -1,8 +1,8 @@
 /* 1. Background and Font */
 body {
-    background-color: #0a0a0a; /* Dark background */
-    color: #e0e0e0;            /* Readable web-safe font color */
-    font-family: Arial, Helvetica, sans-serif; /* Web-safe font requirement */
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -10,22 +10,24 @@ body {
 
 /* 2. Header Styling */
 header {
-    text-align: center;        /* Align text to center */
-    padding: 40px 20px;        /* Add padding */
-    background-color: #111;    /* Background color for header section */
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #111;
 }
 
 header h1 {
-    font-size: 2.5rem;         /* Change font size */
-    font-weight: bold;         /* Change font weight */
+    font-size: 2.5rem;
+    font-weight: bold;
     margin: 0;
 }
 
-/* 3. Navigation Menu */
+/* 3. Navigation Menu Flexbox (Requirement 4.8) */
 nav ul {
-    display: flex;             /* Appear horizontally */
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    list-style: none;          /* Remove bullet points */
+    gap: 20px;
+    list-style: none;
     padding: 15px 0;
     margin: 0;
     background-color: #1a1a1a;
@@ -34,72 +36,138 @@ nav ul {
 nav a {
     color: #888;
     text-decoration: none;
-    margin: 0 15px;
     transition: 0.3s;
 }
 
-/* Add hover effects for links */
 nav a:hover {
-    color: #ffffff;            /* Text color change on hover */
-    text-shadow: 0 0 8px #fff; /* Subtle techy glow */
+    color: #ffffff;
+    background-color: #222;
+    padding: 5px 10px;
+    border-radius: 4px;
 }
 
-/* 4. Main Sections */
+/* 4. Main Sections & Flexbox (Requirement 4.8) */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
 section {
-    padding: 40px;             /* Add padding */
-    margin: 20px auto;         /* Add margin */
+    padding: 40px;
+    margin: 0 auto;
     max-width: 800px;
-    background-color: #111111; /* Distinguish content areas */
-    border: 1px solid #333;    /* Border to distinguish areas */
+    background-color: #111111;
+    border: 1px solid #333;
     border-radius: 4px;
+    transition: transform 0.4s ease-in-out;
+}
+
+section:hover {
+    transform: scale(1.02);
+}
+
+/* --- 4.8 Project: Contact Form Styling --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 12px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #e0e0e0;
+    border-radius: 4px;
+    /* Requirement: Transition for border-color */
+    transition: border-color 0.3s ease;
+}
+
+/* Requirement: Focus effects */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ffffff;
+}
+
+.submit-btn {
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    /* Requirement: Transition for background-color */
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #555;
 }
 
 /* 5. Footer Styling */
 footer {
-    font-size: 0.85rem;        /* Smaller font */
-    text-align: center;        /* Align text to center */
+    font-size: 0.85rem;
+    text-align: center;
     padding: 20px;
-    background-color: #000;    /* Contrasting background */
-    color: #555;               /* Contrasting text color */
+    background-color: #000;
+    color: #555;
 }
 
-/* --- Table Styling (Step 2.2) --- */
+/* --- Table Styling (From 3.9) --- */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    border: 1px solid #333; /* Borders */
+    border: 1px solid #333;
 }
 
 th, td {
-    padding: 15px; /* Padding */
+    padding: 15px;
     text-align: left;
     border-bottom: 1px solid #222;
 }
 
 thead th {
-    background-color: #1a1a1a; /* Header background color */
-    color: #ffffff;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+    background-color: #1a1a1a;
 }
 
-/* --- CSS Transitions & Interactivity (Step 2.1 & 2.3) --- */
+/* --- 4.8 Project: Media Queries (Responsive Design) --- */
 
-/* Navigation link background hover */
-nav a:hover {
-    background-color: #222; /* Navigation background change */
-    border-radius: 4px;
-    padding: 5px 10px;
-    margin: 0 5px; /* Adjusting margin to prevent jumping */
+/* Phone / Small Mobile (Default styles above) */
+
+/* Tablet Display (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    .main-container {
+        padding: 40px;
+    }
+    nav ul {
+        gap: 50px;
+    }
 }
 
-/* Main Section Interaction: Zoom in on hover */
-section {
-    transition: transform 0.4s ease-in-out; /* Smooth transition effect */
-}
-
-section:hover {
-    transform: scale(1.02); /* Step 2.1: Section hover scale effect */
-    border-color: #555;     /* Bonus: subtle border highlight */
+/* Desktop Display (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+    .contact-form {
+        max-width: 700px;
+    }
 }
